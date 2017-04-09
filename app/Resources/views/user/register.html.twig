@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h2>Sign Up</h2>
+<div class="form-container">
+{{ form_start(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password, {'type':'password'}) }}
+    <button class="btn btn-success" type="submit">Register!</button>
+{{ form_end(form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Edit My Account</h2>
+    <div class="form-container">
+    {{ form_start(edit_form, { attr: {novalidate: 'novalidate'} }) }}
+        {{ form_row(edit_form.username) }}
+        {{ form_row(edit_form.email) }}
+        {{ form_row(edit_form.password, {'type':'password','value':''}) }}
+        <input class="btn btn-success" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+    {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Delete My Account :(">
+    {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

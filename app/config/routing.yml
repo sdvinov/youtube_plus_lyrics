@@ -1,0 +1,18 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+search:
+    resource: "@AppBundle/Controller/SearchController.php"
+    type: annotation
+
+register:
+    resource: "@AppBundle/Controller/RegistrationController.php"
+    type: annotation
+
+user:
+    resource: "@AppBundle/Controller/UserController.php"
+    type: annotation
+
+logout:
+    path: /logout

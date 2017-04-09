@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Lyrics for {{ artist }} - {{ song }}{% endblock %}
+{% block body %}
+<form method="GET" action="/search">
+    <div class="search-box">
+        <input class="search artist" type="search" id="artist" name="artist" placeholder="Enter Artist">
+        <input class="search song" type="search" id="song" name="song" placeholder="Enter Song Name">
+        <input class="btn btn-success btn-lg" type="submit" value="Search">
+    </div>
+</form>
+<h1 id="name">{{ song }} by {{ artist }}</h1>
+<iframe width="550" height="400"
+src="http://www.youtube.com/embed/{{ id }}">
+</iframe>
+
+<pre>{{ lyrics }}</pre>
+{% endblock %}
