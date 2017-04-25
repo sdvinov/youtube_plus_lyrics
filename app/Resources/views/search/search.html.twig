@@ -5,6 +5,7 @@
   <script src="{{ asset('assets/js/favs.js') }}"></script>
 {% endblock %}
 {% block body %}
+<!-- Display notices if there are any -->
 {% for notice in app.session.flashbag.get('loggedin') %}
   <div class="alert alert-info">
     {{ notice }}
@@ -22,6 +23,7 @@
     <input class="btn btn-success btn-lg" type="submit" value="Search">
   </div>
 </form>
+<!-- Display list of videos -->
 {% for com in result %}
 <div class="item">
   <a href="{{ path('show', { 'id' : com[2] }) }}?artist={{ artist }}&song={{ song }}">
