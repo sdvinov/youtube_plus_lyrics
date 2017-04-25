@@ -1,34 +1,34 @@
 {% extends 'base.html.twig' %}
 {% block title %}Search{% endblock %}
 {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="{{ asset('assets/js/favs.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="{{ asset('assets/js/favs.js') }}"></script>
 {% endblock %}
 {% block body %}
 {% for notice in app.session.flashbag.get('loggedin') %}
-    <div class="alert alert-info">
-        {{ notice }}
-    </div>
+  <div class="alert alert-info">
+    {{ notice }}
+  </div>
 {% endfor %}
 {% for notice in app.session.flashbag.get('fill') %}
-    <div class="alert alert-info">
-        {{ notice }}
-    </div>
+  <div class="alert alert-info">
+    {{ notice }}
+  </div>
 {% endfor %}
 <form method="GET" action="/search">
-    <div>
-        <input class="search artist" type="search" id="artist" name="artist" placeholder="Enter Artist">
-        <input class="search song" type="search" id="song" name="song" placeholder="Enter Song Name">
-        <input class="btn btn-success btn-lg" type="submit" value="Search">
-    </div>
+  <div>
+    <input class="search artist" type="search" id="artist" name="artist" placeholder="Enter Artist">
+    <input class="search song" type="search" id="song" name="song" placeholder="Enter Song Name">
+    <input class="btn btn-success btn-lg" type="submit" value="Search">
+  </div>
 </form>
 {% for com in result %}
 <div class="item">
-    <a href="{{ path('show', { 'id' : com[2] }) }}?artist={{ artist }}&song={{ song }}">
-    <img src="http://img.youtube.com/vi/{{ com[2] }}/mqdefault.jpg"/></a>
-    <p class="video"><a href="{{ path('show', { 'id' : com[2] }) }}?artist={{ artist }}&song={{ song }}">{{ com[0] }}</a><br/>
-    <span class="channel">Channel:</span> <a href="https://www.youtube.com/user/{{ com[1] }}">{{ com[1] }}</a></p>
-    <div style="display:none"><span class="id">{{ com[2] }}</span><br/><span class="artist">{{ artist }}</span><br/><span class="song">{{ song }}</span></div>
+  <a href="{{ path('show', { 'id' : com[2] }) }}?artist={{ artist }}&song={{ song }}">
+  <img src="http://img.youtube.com/vi/{{ com[2] }}/mqdefault.jpg"/></a>
+  <p class="video"><a href="{{ path('show', { 'id' : com[2] }) }}?artist={{ artist }}&song={{ song }}">{{ com[0] }}</a><br/>
+  <span class="channel">Channel:</span> <a href="https://www.youtube.com/user/{{ com[1] }}">{{ com[1] }}</a></p>
+  <div style="display:none"><span class="id">{{ com[2] }}</span><br/><span class="artist">{{ artist }}</span><br/><span class="song">{{ song }}</span></div>
 </div>
 <div style="clear: both"></div>
 {% endfor %}

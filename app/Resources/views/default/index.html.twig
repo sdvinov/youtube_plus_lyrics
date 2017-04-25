@@ -5,29 +5,29 @@
 			<h1>Welcome to Watch'n'Sing!</h1>
     		<p>Have you ever tried to watch a video on YouTube and sing at the same time with having lyrics on a separate tab in your browser? If you did, then you, probably, thought that it is not really convenient. You are at the right site right now - get the video and the lyrics on the same page!</p>
     		<form method="GET" action="/search">
-                <div>
-                    <input class="search artist" type="search" id="artist" name="artist" placeholder="Enter Artist">
-                    <input class="search song" type="search" id="song" name="song" placeholder="Enter Song Name">
-                    <input class="btn btn-success btn-lg" type="submit" value="Search">
-                </div>
-            </form>
-		</div>
-        <div class="tutorial">
-            <div class="t-item">
-                <h1>1. Tell us</h1>
-                <p>what you want to sing</p>
-                <img src="{{ asset('assets/img/decide.png') }}" />
-            </div>
-            <div class="t-item">
-                <h1>2. Choose</h1>
-                <p>what you want to sing</p>
-                <img src="{{ asset('assets/img/choose.png') }}" />
-            </div>
-            <div class="t-item">
-                <h1>3. Sing</h1>
-                <p>what you want to sing</p>
-                <img src="{{ asset('assets/img/sing.png') }}" />
-            </div>
+        <div>
+          <input class="search artist" type="search" id="artist" name="artist" placeholder="Enter Artist">
+          <input class="search song" type="search" id="song" name="song" placeholder="Enter Song Name">
+          <input class="btn btn-success btn-lg" type="submit" value="Search">
         </div>
+      </form>
+		</div>
+    <div class="tutorial">
+      <div class="t-item">
+        <h1>1. Tell us</h1>
+        <p>what you want to sing</p>
+        <img src="{{ asset('assets/img/decide.png') }}" />
+      </div>
+      <div class="t-item">
+        <h1>2. Choose</h1>
+        <p>what you want to sing</p>
+        <img src="{{ asset('assets/img/choose.png') }}" />
+      </div>
+      <div class="t-item">
+        <h1>3. Sing</h1>
+        <p>what you want to sing</p>
+        <img src="{{ asset('assets/img/sing.png') }}" />
+      </div>
+    </div>
 	</div>
 {% endblock %}
